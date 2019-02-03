@@ -89,29 +89,29 @@ $("#submitButtonTypes").on("click", function(event){
         $("#beerResults").html("<div class='card'><div class='card-header'><img class='resultImage' src="+ beer.labels.contentAwareMedium+" alt=''><h3>"+ beer.name+"</h3></div><div class='card-body'><h5>"+beer.style.name+"</h5><p class='card-text'>"+beer.description+"</p><h1>Simular Beers</h1><div class='row' id='otherResults'></div></div></div>")
             
         // Result all Other Beer Simular
-            styleId = response.data[0].styleId ;
-            console.log(styleId);
-            var queryURL = 'https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/beers?styleId='+ styleId +'&key=442d82061216d902ec97f9787c20dd1b';
-            $.ajax({
-                url: queryURL,
-                method: "GET",
-            }).then(function(response){
-                console.log(response);
-                var newbeer = response.data;
-                // Random showing of the beer  
-                var ArrayRandom = [];
-                var j = 0;
-                while(j < 6){
-                    var ranNum = Math.floor(Math.random() * (newbeer.length));
-                    if (!ArrayRandom.includes(ranNum)){
-                        ArrayRandom.push(ranNum);
-                        j++;
-                        if (newbeer[ranNum].labels && newbeer[ranNum].name != beerName){
-                            $("#otherResults").append("<div class='col-3 text-center showMe' id='"+newbeer[ranNum].name+"'><img class='resultImage' src="+ newbeer[ranNum].labels.contentAwareMedium+" alt=''><p>"+newbeer[ranNum].name+"</p></div>");
-                        } 
-                    }
+        styleId = response.data[0].styleId ;
+        console.log(styleId);
+        var queryURL = 'https://cors-anywhere.herokuapp.com/https://sandbox-api.brewerydb.com/v2/beers?styleId='+ styleId +'&key=442d82061216d902ec97f9787c20dd1b';
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+        }).then(function(response){
+            console.log(response);
+            var newbeer = response.data;
+            // Random showing of the beer  
+            var ArrayRandom = [];
+            var j = 0;
+            while(j < 6){
+                var ranNum = Math.floor(Math.random() * (newbeer.length));
+                if (!ArrayRandom.includes(ranNum)){
+                    ArrayRandom.push(ranNum);
+                    j++;
+                    if (newbeer[ranNum].labels && newbeer[ranNum].name != beerName){
+                        $("#otherResults").append("<div class='col-3 text-center showMe' id='"+newbeer[ranNum].name+"'><img class='resultImage' src="+ newbeer[ranNum].labels.contentAwareMedium+" alt=''><p>"+newbeer[ranNum].name+"</p></div>");
+                    } 
                 }
-            });
+            }
+        });
     });
 })
 
@@ -258,21 +258,21 @@ $(document).on("click",".showMe", function(){
         });
   }
 
-    //more and less buttons for beer types
-    function readMoreLess(x) {
-        var dots = document.getElementById("dots"+x);
-        var moreText = document.getElementById("more"+x);
-        var btnText = document.getElementById("readMore"+x);
-      
-        if (dots.style.display === "none") {
-          dots.style.display = "inline";
-          btnText.innerHTML = "Read more"; 
-          moreText.style.display = "none";
-        } else {
-          dots.style.display = "none";
-          btnText.innerHTML = "Read less"; 
-          moreText.style.display = "inline";
-        }
-      };
+//more and less buttons for beer types
+function readMoreLess(x) {
+    var dots = document.getElementById("dots"+x);
+    var moreText = document.getElementById("more"+x);
+    var btnText = document.getElementById("readMore"+x);
+    
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more"; 
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less"; 
+        moreText.style.display = "inline";
+    }
+};
     
 
