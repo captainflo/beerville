@@ -1,6 +1,10 @@
 # SOCIAL NETWORK DEVELOPMENT (PROJECT SCHOOL)
 
-This is my final Project from the University of Miami, The purpose of the app is to connect you with the best liaisons in the city
+This App is a way for the learning connoisseur to find legitimate breweries approved by an already experienced audience, while also having convenient tools for learning about certain popular beer brands and types.
+
+**Preview**
+
+![](wiki.gif)
 
 **Technologies Used**
 
@@ -20,3 +24,5 @@ This is my final Project from the University of Miami, The purpose of the app is
 - ...
 
 **API**
+
+- brewerydb.com (some features are not accessible due to API limits being reached)
