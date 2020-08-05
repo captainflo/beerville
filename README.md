@@ -2,10 +2,6 @@
 
 This App is a way for the learning connoisseur to find legitimate breweries approved by an already experienced audience, while also having convenient tools for learning about certain popular beer brands and types.
 
-**Preview**
-
-![](wiki.gif)
-
 **Technologies Used**
 
 **Backend**
